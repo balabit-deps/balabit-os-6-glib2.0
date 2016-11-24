@@ -35,18 +35,19 @@
         This variable can be set to keep <span class="type">Gvfs</span> from starting the fuse backend,
         which may be unwanted or unnecessary in certain situations.
       </p>
-<p>
-      The following environment variables are only useful for debugging
-      GIO itself or modules that it loads. They should not be set in a
-      production environment.
-    </p>
 <p><b><code class="envar">GIO_USE_VFS</code>. </b>
         This environment variable can be set to the name of a <a class="link" href="GVfs.html" title="GVfs"><span class="type">GVfs</span></a>
         implementation to override the default for debugging purposes.
         The <a class="link" href="GVfs.html" title="GVfs"><span class="type">GVfs</span></a> implementation for local files that is included in GIO
         has the name "local", the implementation in the gvfs module has
-        the name "gvfs".
+        the name "gvfs".  Most commonly, system software will set this to "local"
+	to avoid having `GFile` APIs perform unnecessary DBus calls.
       </p>
+<p>
+      The following environment variables are only useful for debugging
+      GIO itself or modules that it loads. They should not be set in a
+      production environment.
+    </p>
 <p><b><code class="envar">GIO_USE_FILE_MONITOR</code>. </b>
         This variable can be set to the name of a <a class="link" href="GFileMonitor.html" title="GFileMonitor"><span class="type">GFileMonitor</span></a>
         implementation to override the default for debugging purposes.

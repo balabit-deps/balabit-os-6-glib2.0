@@ -619,7 +619,7 @@ and test cases implicitly. A simple call like</p>
     <tbody>
       <tr>
         <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="function"><a href="glib-Testing.html#g-test-add-func">g_test_add_func</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;/misc/assertions&quot;</span><span class="gtkdoc opt">,</span> test_assertions<span class="gtkdoc opt">);</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="function"><a href="glib-Testing.html#g-test-add-func">g_test_add_func</a></span><span class="normal"> </span><span class="symbol">(</span><span class="string">"/misc/assertions"</span><span class="symbol">,</span><span class="normal"> test_assertions</span><span class="symbol">);</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -702,66 +702,66 @@ nicely formatted test reports.</p>
 58
 59
 60</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc ppc">#include &lt;glib.h&gt;</span>
-<span class="gtkdoc ppc">#include &lt;locale.h&gt;</span>
+        <td class="listing_code"><pre class="programlisting"><span class="preproc">#include</span><span class="normal"> </span><span class="string">&lt;glib.h&gt;</span>
+<span class="preproc">#include</span><span class="normal"> </span><span class="string">&lt;locale.h&gt;</span>
 
-<span class="gtkdoc kwc">typedef</span> <span class="gtkdoc kwb">struct</span> <span class="gtkdoc opt">{</span>
-  MyObject <span class="gtkdoc opt">*</span>obj<span class="gtkdoc opt">;</span>
-  OtherObject <span class="gtkdoc opt">*</span>helper<span class="gtkdoc opt">;</span>
-<span class="gtkdoc opt">}</span> MyObjectFixture<span class="gtkdoc opt">;</span>
+<span class="keyword">typedef</span><span class="normal"> </span><span class="keyword">struct</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">  </span><span class="usertype">MyObject</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">obj</span><span class="symbol">;</span>
+<span class="normal">  </span><span class="usertype">OtherObject</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">helper</span><span class="symbol">;</span>
+<span class="cbracket">}</span><span class="normal"> MyObjectFixture</span><span class="symbol">;</span>
 
-<span class="gtkdoc kwb">static void</span>
-<span class="function">my_object_fixture_set_up</span> <span class="gtkdoc opt">(</span>MyObjectFixture <span class="gtkdoc opt">*</span>fixture<span class="gtkdoc opt">,</span>
-                          gconstpointer user_data<span class="gtkdoc opt">)</span>
-<span class="gtkdoc opt">{</span>
-  fixture<span class="gtkdoc opt">-&gt;</span>obj <span class="gtkdoc opt">=</span> <span class="function">my_object_new</span> <span class="gtkdoc opt">();</span>
-  <span class="function">my_object_set_prop1</span> <span class="gtkdoc opt">(</span>fixture<span class="gtkdoc opt">-&gt;</span>obj<span class="gtkdoc opt">,</span> <span class="string">&quot;some-value&quot;</span><span class="gtkdoc opt">);</span>
-  <span class="function">my_object_do_some_complex_setup</span> <span class="gtkdoc opt">(</span>fixture<span class="gtkdoc opt">-&gt;</span>obj<span class="gtkdoc opt">,</span> user_data<span class="gtkdoc opt">);</span>
+<span class="keyword">static</span><span class="normal"> </span><span class="type">void</span>
+<span class="function">my_object_fixture_set_up</span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">MyObjectFixture</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">fixture</span><span class="symbol">,</span>
+<span class="normal">                          </span><span class="usertype">gconstpointer</span><span class="normal"> user_data</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">  fixture</span><span class="symbol">-&gt;</span><span class="normal">obj </span><span class="symbol">=</span><span class="normal"> </span><span class="function">my_object_new</span><span class="normal"> </span><span class="symbol">();</span>
+<span class="normal">  </span><span class="function">my_object_set_prop1</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">fixture</span><span class="symbol">-&gt;</span><span class="normal">obj</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"some-value"</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function">my_object_do_some_complex_setup</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">fixture</span><span class="symbol">-&gt;</span><span class="normal">obj</span><span class="symbol">,</span><span class="normal"> user_data</span><span class="symbol">);</span>
 
-  fixture<span class="gtkdoc opt">-&gt;</span>helper <span class="gtkdoc opt">=</span> <span class="function">other_object_new</span> <span class="gtkdoc opt">();</span>
-<span class="gtkdoc opt">}</span>
+<span class="normal">  fixture</span><span class="symbol">-&gt;</span><span class="normal">helper </span><span class="symbol">=</span><span class="normal"> </span><span class="function">other_object_new</span><span class="normal"> </span><span class="symbol">();</span>
+<span class="cbracket">}</span>
 
-<span class="gtkdoc kwb">static void</span>
-<span class="function">my_object_fixture_tear_down</span> <span class="gtkdoc opt">(</span>MyObjectFixture <span class="gtkdoc opt">*</span>fixture<span class="gtkdoc opt">,</span>
-                             gconstpointer user_data<span class="gtkdoc opt">)</span>
-<span class="gtkdoc opt">{</span>
-  <span class="function"><a href="../gobject-The-Base-Object-Type.html#g-clear-object">g_clear_object</a></span> <span class="gtkdoc opt">(&amp;</span>fixture<span class="gtkdoc opt">-&gt;</span>helper<span class="gtkdoc opt">);</span>
-  <span class="function"><a href="../gobject-The-Base-Object-Type.html#g-clear-object">g_clear_object</a></span> <span class="gtkdoc opt">(&amp;</span>fixture<span class="gtkdoc opt">-&gt;</span>obj<span class="gtkdoc opt">);</span>
-<span class="gtkdoc opt">}</span>
+<span class="keyword">static</span><span class="normal"> </span><span class="type">void</span>
+<span class="function">my_object_fixture_tear_down</span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">MyObjectFixture</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">fixture</span><span class="symbol">,</span>
+<span class="normal">                             </span><span class="usertype">gconstpointer</span><span class="normal"> user_data</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">  </span><span class="function"><a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-clear-object">g_clear_object</a></span><span class="normal"> </span><span class="symbol">(&amp;</span><span class="normal">fixture</span><span class="symbol">-&gt;</span><span class="normal">helper</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-clear-object">g_clear_object</a></span><span class="normal"> </span><span class="symbol">(&amp;</span><span class="normal">fixture</span><span class="symbol">-&gt;</span><span class="normal">obj</span><span class="symbol">);</span>
+<span class="cbracket">}</span>
 
-<span class="gtkdoc kwb">static void</span>
-<span class="function">test_my_object_test1</span> <span class="gtkdoc opt">(</span>MyObjectFixture <span class="gtkdoc opt">*</span>fixture<span class="gtkdoc opt">,</span>
-                      gconstpointer user_data<span class="gtkdoc opt">)</span>
-<span class="gtkdoc opt">{</span>
-  <span class="function"><a href="glib-Testing.html#g-assert-cmpstr">g_assert_cmpstr</a></span> <span class="gtkdoc opt">(</span><span class="function">my_object_get_property</span> <span class="gtkdoc opt">(</span>fixture<span class="gtkdoc opt">-&gt;</span>obj<span class="gtkdoc opt">), ==,</span> <span class="string">&quot;initial-value&quot;</span><span class="gtkdoc opt">);</span>
-<span class="gtkdoc opt">}</span>
+<span class="keyword">static</span><span class="normal"> </span><span class="type">void</span>
+<span class="function">test_my_object_test1</span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">MyObjectFixture</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">fixture</span><span class="symbol">,</span>
+<span class="normal">                      </span><span class="usertype">gconstpointer</span><span class="normal"> user_data</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">  </span><span class="function"><a href="glib-Testing.html#g-assert-cmpstr">g_assert_cmpstr</a></span><span class="normal"> </span><span class="symbol">(</span><span class="function">my_object_get_property</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">fixture</span><span class="symbol">-&gt;</span><span class="normal">obj</span><span class="symbol">),</span><span class="normal"> </span><span class="symbol">==,</span><span class="normal"> </span><span class="string">"initial-value"</span><span class="symbol">);</span>
+<span class="cbracket">}</span>
 
-<span class="gtkdoc kwb">static void</span>
-<span class="function">test_my_object_test2</span> <span class="gtkdoc opt">(</span>MyObjectFixture <span class="gtkdoc opt">*</span>fixture<span class="gtkdoc opt">,</span>
-                      gconstpointer user_data<span class="gtkdoc opt">)</span>
-<span class="gtkdoc opt">{</span>
-  <span class="function">my_object_do_some_work_using_helper</span> <span class="gtkdoc opt">(</span>fixture<span class="gtkdoc opt">-&gt;</span>obj<span class="gtkdoc opt">,</span> fixture<span class="gtkdoc opt">-&gt;</span>helper<span class="gtkdoc opt">);</span>
-  <span class="function"><a href="glib-Testing.html#g-assert-cmpstr">g_assert_cmpstr</a></span> <span class="gtkdoc opt">(</span><span class="function">my_object_get_property</span> <span class="gtkdoc opt">(</span>fixture<span class="gtkdoc opt">-&gt;</span>obj<span class="gtkdoc opt">), ==,</span> <span class="string">&quot;updated-value&quot;</span><span class="gtkdoc opt">);</span>
-<span class="gtkdoc opt">}</span>
+<span class="keyword">static</span><span class="normal"> </span><span class="type">void</span>
+<span class="function">test_my_object_test2</span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">MyObjectFixture</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">fixture</span><span class="symbol">,</span>
+<span class="normal">                      </span><span class="usertype">gconstpointer</span><span class="normal"> user_data</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">  </span><span class="function">my_object_do_some_work_using_helper</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">fixture</span><span class="symbol">-&gt;</span><span class="normal">obj</span><span class="symbol">,</span><span class="normal"> fixture</span><span class="symbol">-&gt;</span><span class="normal">helper</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="glib-Testing.html#g-assert-cmpstr">g_assert_cmpstr</a></span><span class="normal"> </span><span class="symbol">(</span><span class="function">my_object_get_property</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">fixture</span><span class="symbol">-&gt;</span><span class="normal">obj</span><span class="symbol">),</span><span class="normal"> </span><span class="symbol">==,</span><span class="normal"> </span><span class="string">"updated-value"</span><span class="symbol">);</span>
+<span class="cbracket">}</span>
 
-<span class="gtkdoc kwb">int</span>
-<span class="function">main</span> <span class="gtkdoc opt">(</span><span class="gtkdoc kwb">int</span> argc<span class="gtkdoc opt">,</span> <span class="gtkdoc kwb">char</span> <span class="gtkdoc opt">*</span>argv<span class="gtkdoc opt">[])</span>
-<span class="gtkdoc opt">{</span>
-  <span class="function">setlocale</span> <span class="gtkdoc opt">(</span>LC_ALL<span class="gtkdoc opt">,</span> <span class="string">&quot;&quot;</span><span class="gtkdoc opt">);</span>
+<span class="type">int</span>
+<span class="function">main</span><span class="normal"> </span><span class="symbol">(</span><span class="type">int</span><span class="normal"> argc</span><span class="symbol">,</span><span class="normal"> </span><span class="type">char</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">argv</span><span class="symbol">[])</span>
+<span class="cbracket">{</span>
+<span class="normal">  </span><span class="function">setlocale</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">LC_ALL</span><span class="symbol">,</span><span class="normal"> </span><span class="string">""</span><span class="symbol">);</span>
 
-  <span class="function"><a href="glib-Testing.html#g-test-init">g_test_init</a></span> <span class="gtkdoc opt">(&amp;</span>argc<span class="gtkdoc opt">, &amp;</span>argv<span class="gtkdoc opt">,</span> NULL<span class="gtkdoc opt">);</span>
-  <span class="function"><a href="glib-Testing.html#g-test-bug-base">g_test_bug_base</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;http://bugzilla.gnome.org/show_bug.cgi?id=&quot;</span><span class="gtkdoc opt">);</span>
+<span class="normal">  </span><span class="function"><a href="glib-Testing.html#g-test-init">g_test_init</a></span><span class="normal"> </span><span class="symbol">(&amp;</span><span class="normal">argc</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">&amp;</span><span class="normal">argv</span><span class="symbol">,</span><span class="normal"> <a href="glib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="glib-Testing.html#g-test-bug-base">g_test_bug_base</a></span><span class="normal"> </span><span class="symbol">(</span><span class="string">"http://bugzilla.gnome.org/show_bug.cgi?id="</span><span class="symbol">);</span>
 
-  <span class="gtkdoc slc">// Define the tests.</span>
-  <span class="function"><a href="glib-Testing.html#g-test-add">g_test_add</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;/my-object/test1&quot;</span><span class="gtkdoc opt">,</span> MyObjectFixture<span class="gtkdoc opt">,</span> <span class="string">&quot;some-user-data&quot;</span><span class="gtkdoc opt">,</span>
-              my_object_fixture_set_up<span class="gtkdoc opt">,</span> test_my_object_test1<span class="gtkdoc opt">,</span>
-              my_object_fixture_tear_down<span class="gtkdoc opt">);</span>
-  <span class="function"><a href="glib-Testing.html#g-test-add">g_test_add</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;/my-object/test2&quot;</span><span class="gtkdoc opt">,</span> MyObjectFixture<span class="gtkdoc opt">,</span> <span class="string">&quot;some-user-data&quot;</span><span class="gtkdoc opt">,</span>
-              my_object_fixture_set_up<span class="gtkdoc opt">,</span> test_my_object_test2<span class="gtkdoc opt">,</span>
-              my_object_fixture_tear_down<span class="gtkdoc opt">);</span>
+<span class="normal">  </span><span class="comment">// Define the tests.</span>
+<span class="normal">  </span><span class="function"><a href="glib-Testing.html#g-test-add">g_test_add</a></span><span class="normal"> </span><span class="symbol">(</span><span class="string">"/my-object/test1"</span><span class="symbol">,</span><span class="normal"> MyObjectFixture</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"some-user-data"</span><span class="symbol">,</span>
+<span class="normal">              my_object_fixture_set_up</span><span class="symbol">,</span><span class="normal"> test_my_object_test1</span><span class="symbol">,</span>
+<span class="normal">              my_object_fixture_tear_down</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="glib-Testing.html#g-test-add">g_test_add</a></span><span class="normal"> </span><span class="symbol">(</span><span class="string">"/my-object/test2"</span><span class="symbol">,</span><span class="normal"> MyObjectFixture</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"some-user-data"</span><span class="symbol">,</span>
+<span class="normal">              my_object_fixture_set_up</span><span class="symbol">,</span><span class="normal"> test_my_object_test2</span><span class="symbol">,</span>
+<span class="normal">              my_object_fixture_tear_down</span><span class="symbol">);</span>
 
-  <span class="keyword">return</span> <span class="function"><a href="glib-Testing.html#g-test-run">g_test_run</a></span> <span class="gtkdoc opt">();</span>
-<span class="gtkdoc opt">}</span></pre></td>
+<span class="normal">  </span><span class="keyword">return</span><span class="normal"> </span><span class="function"><a href="glib-Testing.html#g-test-run">g_test_run</a></span><span class="normal"> </span><span class="symbol">();</span>
+<span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -880,7 +880,7 @@ be skipped (ie, a test whose name contains "/subprocess").</p></li>
 <p><code class="literal">slow</code>, <code class="literal">thorough</code>: Slow and thorough tests, may take quite long and maximize coverage.</p>
 <p><code class="literal">quick</code>: Quick tests, should run really quickly and give good coverage.</p>
 <p><code class="literal">undefined</code>: Tests for undefined behaviour, may provoke programming errors
-under <a class="link" href="glib-Testing.html#g-test-trap-subprocess" title="g_test_trap_subprocess ()"><code class="function">g_test_trap_subprocess()</code></a> or <a href="glib-Testing.html#g-test-expect-message"><code class="function">g_test_expect_messages()</code></a> to check
+under <a class="link" href="glib-Testing.html#g-test-trap-subprocess" title="g_test_trap_subprocess ()"><code class="function">g_test_trap_subprocess()</code></a> or <a class="link" href="glib-Testing.html#g-test-expect-message" title="g_test_expect_message ()"><code class="function">g_test_expect_message()</code></a> to check
 that appropriate assertions or warnings are given</p>
 <p><code class="literal">no-undefined</code>: Avoid tests for undefined behaviour</p>
 </li>
@@ -1799,9 +1799,9 @@ callback A before callback B will cause <code class="function">B()</code> to be 
 <div class="refsect2">
 <a name="g-test-queue-unref"></a><h3>g_test_queue_unref()</h3>
 <pre class="programlisting">#define             g_test_queue_unref(gobject)</pre>
-<p>Enqueue an object to be released with <a href="../gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a> during
+<p>Enqueue an object to be released with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a> during
 the next teardown phase. This is equivalent to calling
-<a class="link" href="glib-Testing.html#g-test-queue-destroy" title="g_test_queue_destroy ()"><code class="function">g_test_queue_destroy()</code></a> with a destroy callback of <a href="../gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</p>
+<a class="link" href="glib-Testing.html#g-test-queue-destroy" title="g_test_queue_destroy ()"><code class="function">g_test_queue_destroy()</code></a> with a destroy callback of <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</p>
 <div class="refsect3">
 <a name="g-test-queue-unref.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -1850,13 +1850,13 @@ the same order as the calls to <a class="link" href="glib-Testing.html#g-test-ex
 5
 6
 7</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc slc">// g_main_context_push_thread_default() should fail if the</span>
-<span class="gtkdoc slc">// context is already owned by another thread.</span>
-<span class="function"><a href="glib-Testing.html#g-test-expect-message">g_test_expect_message</a></span> <span class="gtkdoc opt">(</span>G_LOG_DOMAIN<span class="gtkdoc opt">,</span>
-                       G_LOG_LEVEL_CRITICAL<span class="gtkdoc opt">,</span>
-                       <span class="string">&quot;assertion*acquired_context*failed&quot;</span><span class="gtkdoc opt">);</span>
-<span class="function"><a href="glib-The-Main-Event-Loop.html#g-main-context-push-thread-default">g_main_context_push_thread_default</a></span> <span class="gtkdoc opt">(</span>bad_context<span class="gtkdoc opt">);</span>
-<span class="function"><a href="glib-Testing.html#g-test-assert-expected-messages">g_test_assert_expected_messages</a></span> <span class="gtkdoc opt">();</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="comment">// g_main_context_push_thread_default() should fail if the</span>
+<span class="comment">// context is already owned by another thread.</span>
+<span class="function"><a href="glib-Testing.html#g-test-expect-message">g_test_expect_message</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal"><a href="glib-Message-Logging.html#G-LOG-DOMAIN:CAPS">G_LOG_DOMAIN</a></span><span class="symbol">,</span>
+<span class="normal">                       <a href="glib-Message-Logging.html#G-LOG-LEVEL-CRITICAL:CAPS">G_LOG_LEVEL_CRITICAL</a></span><span class="symbol">,</span>
+<span class="normal">                       </span><span class="string">"assertion*acquired_context*failed"</span><span class="symbol">);</span>
+<span class="function"><a href="glib-The-Main-Event-Loop.html#g-main-context-push-thread-default">g_main_context_push_thread_default</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">bad_context</span><span class="symbol">);</span>
+<span class="function"><a href="glib-Testing.html#g-test-assert-expected-messages">g_test_assert_expected_messages</a></span><span class="normal"> </span><span class="symbol">();</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -1974,30 +1974,30 @@ message.</p>
 22
 23
 24</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc kwb">static void</span>
-<span class="function">test_create_large_object</span> <span class="gtkdoc opt">(</span><span class="gtkdoc kwb">void</span><span class="gtkdoc opt">)</span>
-<span class="gtkdoc opt">{</span>
-  <span class="keyword">if</span> <span class="gtkdoc opt">(</span><span class="function"><a href="glib-Testing.html#g-test-subprocess">g_test_subprocess</a></span> <span class="gtkdoc opt">())</span>
-    <span class="gtkdoc opt">{</span>
-      <span class="function">my_object_new</span> <span class="gtkdoc opt">(</span><span class="number">1000000</span><span class="gtkdoc opt">);</span>
-      <span class="keyword">return</span><span class="gtkdoc opt">;</span>
-    <span class="gtkdoc opt">}</span>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">static</span><span class="normal"> </span><span class="type">void</span>
+<span class="function">test_create_large_object</span><span class="normal"> </span><span class="symbol">(</span><span class="type">void</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="function"><a href="glib-Testing.html#g-test-subprocess">g_test_subprocess</a></span><span class="normal"> </span><span class="symbol">())</span>
+<span class="normal">    </span><span class="cbracket">{</span>
+<span class="normal">      </span><span class="function">my_object_new</span><span class="normal"> </span><span class="symbol">(</span><span class="number">1000000</span><span class="symbol">);</span>
+<span class="normal">      </span><span class="keyword">return</span><span class="symbol">;</span>
+<span class="normal">    </span><span class="cbracket">}</span>
 
-  <span class="gtkdoc slc">// Reruns this same test in a subprocess</span>
-  <span class="function"><a href="glib-Testing.html#g-test-trap-subprocess">g_test_trap_subprocess</a></span> <span class="gtkdoc opt">(</span>NULL<span class="gtkdoc opt">,</span> <span class="number">0</span><span class="gtkdoc opt">,</span> <span class="number">0</span><span class="gtkdoc opt">);</span>
-  <span class="function"><a href="glib-Testing.html#g-test-trap-assert-failed">g_test_trap_assert_failed</a></span> <span class="gtkdoc opt">();</span>
-  <span class="function"><a href="glib-Testing.html#g-test-trap-assert-stderr">g_test_trap_assert_stderr</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;*ERROR*too large*&quot;</span><span class="gtkdoc opt">);</span>
-<span class="gtkdoc opt">}</span>
+<span class="normal">  </span><span class="comment">// Reruns this same test in a subprocess</span>
+<span class="normal">  </span><span class="function"><a href="glib-Testing.html#g-test-trap-subprocess">g_test_trap_subprocess</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal"><a href="glib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">,</span><span class="normal"> </span><span class="number">0</span><span class="symbol">,</span><span class="normal"> </span><span class="number">0</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="glib-Testing.html#g-test-trap-assert-failed">g_test_trap_assert_failed</a></span><span class="normal"> </span><span class="symbol">();</span>
+<span class="normal">  </span><span class="function"><a href="glib-Testing.html#g-test-trap-assert-stderr">g_test_trap_assert_stderr</a></span><span class="normal"> </span><span class="symbol">(</span><span class="string">"*ERROR*too large*"</span><span class="symbol">);</span>
+<span class="cbracket">}</span>
 
-<span class="gtkdoc kwb">int</span>
-<span class="function">main</span> <span class="gtkdoc opt">(</span><span class="gtkdoc kwb">int</span> argc<span class="gtkdoc opt">,</span> <span class="gtkdoc kwb">char</span> <span class="gtkdoc opt">**</span>argv<span class="gtkdoc opt">)</span>
-<span class="gtkdoc opt">{</span>
-  <span class="function"><a href="glib-Testing.html#g-test-init">g_test_init</a></span> <span class="gtkdoc opt">(&amp;</span>argc<span class="gtkdoc opt">, &amp;</span>argv<span class="gtkdoc opt">,</span> NULL<span class="gtkdoc opt">);</span>
+<span class="type">int</span>
+<span class="function">main</span><span class="normal"> </span><span class="symbol">(</span><span class="type">int</span><span class="normal"> argc</span><span class="symbol">,</span><span class="normal"> </span><span class="type">char</span><span class="normal"> </span><span class="symbol">**</span><span class="normal">argv</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">  </span><span class="function"><a href="glib-Testing.html#g-test-init">g_test_init</a></span><span class="normal"> </span><span class="symbol">(&amp;</span><span class="normal">argc</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">&amp;</span><span class="normal">argv</span><span class="symbol">,</span><span class="normal"> <a href="glib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">);</span>
 
-  <span class="function"><a href="glib-Testing.html#g-test-add-func">g_test_add_func</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;/myobject/create_large_object&quot;</span><span class="gtkdoc opt">,</span>
-                   test_create_large_object<span class="gtkdoc opt">);</span>
-  <span class="keyword">return</span> <span class="function"><a href="glib-Testing.html#g-test-run">g_test_run</a></span> <span class="gtkdoc opt">();</span>
-<span class="gtkdoc opt">}</span></pre></td>
+<span class="normal">  </span><span class="function"><a href="glib-Testing.html#g-test-add-func">g_test_add_func</a></span><span class="normal"> </span><span class="symbol">(</span><span class="string">"/myobject/create_large_object"</span><span class="symbol">,</span>
+<span class="normal">                   test_create_large_object</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="keyword">return</span><span class="normal"> </span><span class="function"><a href="glib-Testing.html#g-test-run">g_test_run</a></span><span class="normal"> </span><span class="symbol">();</span>
+<span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -2219,19 +2219,19 @@ termination and validates child program outputs.</p>
 11
 12
 13</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc kwb">static void</span>
-<span class="function">test_fork_patterns</span> <span class="gtkdoc opt">(</span><span class="gtkdoc kwb">void</span><span class="gtkdoc opt">)</span>
-<span class="gtkdoc opt">{</span>
-  <span class="keyword">if</span> <span class="gtkdoc opt">(</span><span class="function"><a href="glib-Testing.html#g-test-trap-fork">g_test_trap_fork</a></span> <span class="gtkdoc opt">(</span><span class="number">0</span><span class="gtkdoc opt">,</span> G_TEST_TRAP_SILENCE_STDOUT <span class="gtkdoc opt">|</span> G_TEST_TRAP_SILENCE_STDERR<span class="gtkdoc opt">))</span>
-    <span class="gtkdoc opt">{</span>
-      <span class="function"><a href="glib-Warnings-and-Assertions.html#g-print">g_print</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;some stdout text: somagic17</span><span class="gtkdoc esc">\n</span><span class="string">&quot;</span><span class="gtkdoc opt">);</span>
-      <span class="function"><a href="glib-Warnings-and-Assertions.html#g-printerr">g_printerr</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;some stderr text: semagic43</span><span class="gtkdoc esc">\n</span><span class="string">&quot;</span><span class="gtkdoc opt">);</span>
-      <span class="function">exit</span> <span class="gtkdoc opt">(</span><span class="number">0</span><span class="gtkdoc opt">);</span> <span class="gtkdoc slc">// successful test run</span>
-    <span class="gtkdoc opt">}</span>
-  <span class="function"><a href="glib-Testing.html#g-test-trap-assert-passed">g_test_trap_assert_passed</a></span> <span class="gtkdoc opt">();</span>
-  <span class="function"><a href="glib-Testing.html#g-test-trap-assert-stdout">g_test_trap_assert_stdout</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;*somagic17*&quot;</span><span class="gtkdoc opt">);</span>
-  <span class="function"><a href="glib-Testing.html#g-test-trap-assert-stderr">g_test_trap_assert_stderr</a></span> <span class="gtkdoc opt">(</span><span class="string">&quot;*semagic43*&quot;</span><span class="gtkdoc opt">);</span>
-<span class="gtkdoc opt">}</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">static</span><span class="normal"> </span><span class="type">void</span>
+<span class="function">test_fork_patterns</span><span class="normal"> </span><span class="symbol">(</span><span class="type">void</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="function"><a href="glib-Testing.html#g-test-trap-fork">g_test_trap_fork</a></span><span class="normal"> </span><span class="symbol">(</span><span class="number">0</span><span class="symbol">,</span><span class="normal"> <a href="glib-Testing.html#G-TEST-TRAP-SILENCE-STDOUT:CAPS">G_TEST_TRAP_SILENCE_STDOUT</a> </span><span class="symbol">|</span><span class="normal"> <a href="glib-Testing.html#G-TEST-TRAP-SILENCE-STDERR:CAPS">G_TEST_TRAP_SILENCE_STDERR</a></span><span class="symbol">))</span>
+<span class="normal">    </span><span class="cbracket">{</span>
+<span class="normal">      </span><span class="function"><a href="glib-Warnings-and-Assertions.html#g-print">g_print</a></span><span class="normal"> </span><span class="symbol">(</span><span class="string">"some stdout text: somagic17</span><span class="specialchar">\n</span><span class="string">"</span><span class="symbol">);</span>
+<span class="normal">      </span><span class="function"><a href="glib-Warnings-and-Assertions.html#g-printerr">g_printerr</a></span><span class="normal"> </span><span class="symbol">(</span><span class="string">"some stderr text: semagic43</span><span class="specialchar">\n</span><span class="string">"</span><span class="symbol">);</span>
+<span class="normal">      </span><span class="function">exit</span><span class="normal"> </span><span class="symbol">(</span><span class="number">0</span><span class="symbol">);</span><span class="normal"> </span><span class="comment">// successful test run</span>
+<span class="normal">    </span><span class="cbracket">}</span>
+<span class="normal">  </span><span class="function"><a href="glib-Testing.html#g-test-trap-assert-passed">g_test_trap_assert_passed</a></span><span class="normal"> </span><span class="symbol">();</span>
+<span class="normal">  </span><span class="function"><a href="glib-Testing.html#g-test-trap-assert-stdout">g_test_trap_assert_stdout</a></span><span class="normal"> </span><span class="symbol">(</span><span class="string">"*somagic17*"</span><span class="symbol">);</span>
+<span class="normal">  </span><span class="function"><a href="glib-Testing.html#g-test-trap-assert-stderr">g_test_trap_assert_stderr</a></span><span class="normal"> </span><span class="symbol">(</span><span class="string">"*semagic43*"</span><span class="symbol">);</span>
+<span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -2435,7 +2435,7 @@ includes the actual values of <em class="parameter"><code>s1</code></em>
     <tbody>
       <tr>
         <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="function"><a href="glib-Testing.html#g-assert-cmpstr">g_assert_cmpstr</a></span> <span class="gtkdoc opt">(</span>mystring<span class="gtkdoc opt">, ==,</span> <span class="string">&quot;fubar&quot;</span><span class="gtkdoc opt">);</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="function"><a href="glib-Testing.html#g-assert-cmpstr">g_assert_cmpstr</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">mystring</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">==,</span><span class="normal"> </span><span class="string">"fubar"</span><span class="symbol">);</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -2650,7 +2650,7 @@ includes the actual values of <em class="parameter"><code>l1</code></em>
     <tbody>
       <tr>
         <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="function"><a href="glib-Testing.html#g-assert-cmpmem">g_assert_cmpmem</a></span> <span class="gtkdoc opt">(</span>buf<span class="gtkdoc opt">-&gt;</span>data<span class="gtkdoc opt">,</span> buf<span class="gtkdoc opt">-&gt;</span>len<span class="gtkdoc opt">,</span> expected<span class="gtkdoc opt">,</span> <span class="keyword">sizeof</span> <span class="gtkdoc opt">(</span>expected<span class="gtkdoc opt">));</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="function"><a href="glib-Testing.html#g-assert-cmpmem">g_assert_cmpmem</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">buf</span><span class="symbol">-&gt;</span><span class="normal">data</span><span class="symbol">,</span><span class="normal"> buf</span><span class="symbol">-&gt;</span><span class="normal">len</span><span class="symbol">,</span><span class="normal"> expected</span><span class="symbol">,</span><span class="normal"> </span><span class="keyword">sizeof</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">expected</span><span class="symbol">));</span></pre></td>
       </tr>
     </tbody>
   </table>

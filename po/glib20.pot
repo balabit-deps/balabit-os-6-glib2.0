@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=glib&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-05-10 11:17+0200\n"
+"POT-Creation-Date: 2016-08-17 12:48-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -110,8 +110,8 @@ msgstr ""
 msgid "Application identifier in D-Bus format (eg: org.example.viewer)"
 msgstr ""
 
-#: ../gio/gapplication-tool.c:72 ../gio/glib-compile-resources.c:592
-#: ../gio/glib-compile-resources.c:623 ../gio/gresource-tool.c:495
+#: ../gio/gapplication-tool.c:72 ../gio/glib-compile-resources.c:595
+#: ../gio/glib-compile-resources.c:626 ../gio/gresource-tool.c:495
 #: ../gio/gresource-tool.c:561
 msgid "FILE"
 msgstr ""
@@ -288,7 +288,7 @@ msgstr ""
 #: ../gio/gcharsetconverter.c:342 ../gio/gdatainputstream.c:848
 #: ../gio/gdatainputstream.c:1256 ../glib/gconvert.c:438 ../glib/gconvert.c:845
 #: ../glib/giochannel.c:1556 ../glib/giochannel.c:1598
-#: ../glib/giochannel.c:2442 ../glib/gutf8.c:853 ../glib/gutf8.c:1306
+#: ../glib/giochannel.c:2442 ../glib/gutf8.c:855 ../glib/gutf8.c:1308
 msgid "Invalid byte sequence in conversion input"
 msgstr ""
 
@@ -509,7 +509,7 @@ msgid ""
 "Exhausted all available authentication mechanisms (tried: %s) (available: %s)"
 msgstr ""
 
-#: ../gio/gdbusauth.c:1170
+#: ../gio/gdbusauth.c:1173
 msgid "Cancelled via GDBusAuthObserver::authorize-authenticated-peer"
 msgstr ""
 
@@ -852,17 +852,17 @@ msgstr ""
 msgid "Unable to load /var/lib/dbus/machine-id or /etc/machine-id: "
 msgstr ""
 
-#: ../gio/gdbusproxy.c:1610
+#: ../gio/gdbusproxy.c:1611
 #, c-format
 msgid "Error calling StartServiceByName for %s: "
 msgstr ""
 
-#: ../gio/gdbusproxy.c:1633
+#: ../gio/gdbusproxy.c:1634
 #, c-format
 msgid "Unexpected reply %d from StartServiceByName(\"%s\") method"
 msgstr ""
 
-#: ../gio/gdbusproxy.c:2709 ../gio/gdbusproxy.c:2843
+#: ../gio/gdbusproxy.c:2710 ../gio/gdbusproxy.c:2844
 msgid ""
 "Cannot invoke method; proxy is for a well-known name without an owner and "
 "proxy was constructed with the G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START flag"
@@ -905,13 +905,13 @@ msgid ""
 msgstr ""
 
 #: ../gio/gdbus-tool.c:164 ../gio/gdbus-tool.c:226 ../gio/gdbus-tool.c:298
-#: ../gio/gdbus-tool.c:322 ../gio/gdbus-tool.c:711 ../gio/gdbus-tool.c:1043
-#: ../gio/gdbus-tool.c:1477
+#: ../gio/gdbus-tool.c:322 ../gio/gdbus-tool.c:724 ../gio/gdbus-tool.c:1069
+#: ../gio/gdbus-tool.c:1503
 #, c-format
 msgid "Error: %s\n"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:175 ../gio/gdbus-tool.c:239 ../gio/gdbus-tool.c:1493
+#: ../gio/gdbus-tool.c:175 ../gio/gdbus-tool.c:239 ../gio/gdbus-tool.c:1519
 #, c-format
 msgid "Error parsing introspection XML: %s\n"
 msgstr ""
@@ -976,146 +976,146 @@ msgstr ""
 msgid "Signal and interface name"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:576
+#: ../gio/gdbus-tool.c:578
 msgid "Emit a signal."
 msgstr ""
 
-#: ../gio/gdbus-tool.c:610 ../gio/gdbus-tool.c:842 ../gio/gdbus-tool.c:1583
-#: ../gio/gdbus-tool.c:1818
+#: ../gio/gdbus-tool.c:612 ../gio/gdbus-tool.c:857 ../gio/gdbus-tool.c:1609
+#: ../gio/gdbus-tool.c:1844
 #, c-format
 msgid "Error connecting: %s\n"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:622
+#: ../gio/gdbus-tool.c:624
 #, c-format
 msgid "Error: object path not specified.\n"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:627 ../gio/gdbus-tool.c:909 ../gio/gdbus-tool.c:1648
-#: ../gio/gdbus-tool.c:1884
+#: ../gio/gdbus-tool.c:629 ../gio/gdbus-tool.c:924 ../gio/gdbus-tool.c:1674
+#: ../gio/gdbus-tool.c:1910
 #, c-format
 msgid "Error: %s is not a valid object path\n"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:633
+#: ../gio/gdbus-tool.c:635
 #, c-format
 msgid "Error: signal not specified.\n"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:640
+#: ../gio/gdbus-tool.c:642
 #, c-format
 msgid "Error: signal must be the fully-qualified name.\n"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:648
+#: ../gio/gdbus-tool.c:650
 #, c-format
 msgid "Error: %s is not a valid interface name\n"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:654
+#: ../gio/gdbus-tool.c:656
 #, c-format
 msgid "Error: %s is not a valid member name\n"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:660
+#: ../gio/gdbus-tool.c:662
 #, c-format
 msgid "Error: %s is not a valid unique bus name.\n"
 msgstr ""
 
 #. Use the original non-"parse-me-harder" error
-#: ../gio/gdbus-tool.c:687 ../gio/gdbus-tool.c:1011
+#: ../gio/gdbus-tool.c:699 ../gio/gdbus-tool.c:1036
 #, c-format
 msgid "Error parsing parameter %d: %s\n"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:718
+#: ../gio/gdbus-tool.c:731
 #, c-format
 msgid "Error flushing connection: %s\n"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:745
+#: ../gio/gdbus-tool.c:758
 msgid "Destination name to invoke method on"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:746
+#: ../gio/gdbus-tool.c:759
 msgid "Object path to invoke method on"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:747
+#: ../gio/gdbus-tool.c:760
 msgid "Method and interface name"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:748
+#: ../gio/gdbus-tool.c:761
 msgid "Timeout in seconds"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:787
+#: ../gio/gdbus-tool.c:802
 msgid "Invoke a method on a remote object."
 msgstr ""
 
-#: ../gio/gdbus-tool.c:862 ../gio/gdbus-tool.c:1602 ../gio/gdbus-tool.c:1837
+#: ../gio/gdbus-tool.c:877 ../gio/gdbus-tool.c:1628 ../gio/gdbus-tool.c:1863
 #, c-format
 msgid "Error: Destination is not specified\n"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:874 ../gio/gdbus-tool.c:1619 ../gio/gdbus-tool.c:1849
+#: ../gio/gdbus-tool.c:889 ../gio/gdbus-tool.c:1645 ../gio/gdbus-tool.c:1875
 #, c-format
 msgid "Error: %s is not a valid bus name\n"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:889 ../gio/gdbus-tool.c:1628
+#: ../gio/gdbus-tool.c:904 ../gio/gdbus-tool.c:1654
 #, c-format
 msgid "Error: Object path is not specified\n"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:924
+#: ../gio/gdbus-tool.c:939
 #, c-format
 msgid "Error: Method name is not specified\n"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:935
+#: ../gio/gdbus-tool.c:950
 #, c-format
 msgid "Error: Method name '%s' is invalid\n"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:1003
+#: ../gio/gdbus-tool.c:1028
 #, c-format
 msgid "Error parsing parameter %d of type '%s': %s\n"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:1440
+#: ../gio/gdbus-tool.c:1466
 msgid "Destination name to introspect"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:1441
+#: ../gio/gdbus-tool.c:1467
 msgid "Object path to introspect"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:1442
+#: ../gio/gdbus-tool.c:1468
 msgid "Print XML"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:1443
+#: ../gio/gdbus-tool.c:1469
 msgid "Introspect children"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:1444
+#: ../gio/gdbus-tool.c:1470
 msgid "Only print properties"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:1535
+#: ../gio/gdbus-tool.c:1561
 msgid "Introspect a remote object."
 msgstr ""
 
-#: ../gio/gdbus-tool.c:1740
+#: ../gio/gdbus-tool.c:1766
 msgid "Destination name to monitor"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:1741
+#: ../gio/gdbus-tool.c:1767
 msgid "Object path to monitor"
 msgstr ""
 
-#: ../gio/gdbus-tool.c:1770
+#: ../gio/gdbus-tool.c:1796
 msgid "Monitor a remote object."
 msgstr ""
 
@@ -1452,98 +1452,98 @@ msgstr ""
 msgid "Element <%s> not allowed at toplevel"
 msgstr ""
 
-#: ../gio/glib-compile-resources.c:236
+#: ../gio/glib-compile-resources.c:237
 #, c-format
 msgid "File %s appears multiple times in the resource"
 msgstr ""
 
-#: ../gio/glib-compile-resources.c:247
+#: ../gio/glib-compile-resources.c:248
 #, c-format
 msgid "Failed to locate '%s' in any source directory"
 msgstr ""
 
-#: ../gio/glib-compile-resources.c:258
+#: ../gio/glib-compile-resources.c:259
 #, c-format
 msgid "Failed to locate '%s' in current directory"
 msgstr ""
 
-#: ../gio/glib-compile-resources.c:287
+#: ../gio/glib-compile-resources.c:290
 #, c-format
 msgid "Unknown processing option \"%s\""
 msgstr ""
 
-#: ../gio/glib-compile-resources.c:305 ../gio/glib-compile-resources.c:351
+#: ../gio/glib-compile-resources.c:308 ../gio/glib-compile-resources.c:354
 #, c-format
 msgid "Failed to create temp file: %s"
 msgstr ""
 
-#: ../gio/glib-compile-resources.c:379
+#: ../gio/glib-compile-resources.c:382
 #, c-format
 msgid "Error reading file %s: %s"
 msgstr ""
 
-#: ../gio/glib-compile-resources.c:399
+#: ../gio/glib-compile-resources.c:402
 #, c-format
 msgid "Error compressing file %s"
 msgstr ""
 
-#: ../gio/glib-compile-resources.c:467 ../gio/glib-compile-schemas.c:1603
+#: ../gio/glib-compile-resources.c:470 ../gio/glib-compile-schemas.c:1603
 #, c-format
 msgid "text may not appear inside <%s>"
 msgstr ""
 
-#: ../gio/glib-compile-resources.c:592
+#: ../gio/glib-compile-resources.c:595
 msgid "name of the output file"
 msgstr ""
 
-#: ../gio/glib-compile-resources.c:593
+#: ../gio/glib-compile-resources.c:596
 msgid ""
 "The directories where files are to be read from (default to current "
 "directory)"
 msgstr ""
 
-#: ../gio/glib-compile-resources.c:593 ../gio/glib-compile-schemas.c:2036
+#: ../gio/glib-compile-resources.c:596 ../gio/glib-compile-schemas.c:2036
 #: ../gio/glib-compile-schemas.c:2065
 msgid "DIRECTORY"
 msgstr ""
 
-#: ../gio/glib-compile-resources.c:594
+#: ../gio/glib-compile-resources.c:597
 msgid ""
 "Generate output in the format selected for by the target filename extension"
 msgstr ""
 
-#: ../gio/glib-compile-resources.c:595
+#: ../gio/glib-compile-resources.c:598
 msgid "Generate source header"
 msgstr ""
 
-#: ../gio/glib-compile-resources.c:596
+#: ../gio/glib-compile-resources.c:599
 msgid "Generate sourcecode used to link in the resource file into your code"
 msgstr ""
 
-#: ../gio/glib-compile-resources.c:597
+#: ../gio/glib-compile-resources.c:600
 msgid "Generate dependency list"
 msgstr ""
 
-#: ../gio/glib-compile-resources.c:598
+#: ../gio/glib-compile-resources.c:601
 msgid "Don't automatically create and register resource"
 msgstr ""
 
-#: ../gio/glib-compile-resources.c:599
+#: ../gio/glib-compile-resources.c:602
 msgid "Don't export functions; declare them G_GNUC_INTERNAL"
 msgstr ""
 
-#: ../gio/glib-compile-resources.c:600
+#: ../gio/glib-compile-resources.c:603
 msgid "C identifier name used for the generated source code"
 msgstr ""
 
-#: ../gio/glib-compile-resources.c:626
+#: ../gio/glib-compile-resources.c:629
 msgid ""
 "Compile a resource specification into a resource file.\n"
 "Resource specification files have the extension .gresource.xml,\n"
 "and the resource file have the extension called .gresource."
 msgstr ""
 
-#: ../gio/glib-compile-resources.c:642
+#: ../gio/glib-compile-resources.c:645
 #, c-format
 msgid "You should give exactly one file name\n"
 msgstr ""
@@ -1897,7 +1897,7 @@ msgstr ""
 
 #: ../gio/glocalfile.c:2401 ../gio/glocalfileoutputstream.c:925
 #: ../gio/glocalfileoutputstream.c:939 ../gio/glocalfileoutputstream.c:954
-#: ../gio/glocalfileoutputstream.c:970 ../gio/glocalfileoutputstream.c:984
+#: ../gio/glocalfileoutputstream.c:971 ../gio/glocalfileoutputstream.c:985
 msgid "Backup file creation failed"
 msgstr ""
 
@@ -2016,7 +2016,7 @@ msgstr ""
 
 #: ../gio/glocalfileinputstream.c:199 ../gio/glocalfileinputstream.c:211
 #: ../gio/glocalfileinputstream.c:225 ../gio/glocalfileinputstream.c:333
-#: ../gio/glocalfileoutputstream.c:456 ../gio/glocalfileoutputstream.c:1002
+#: ../gio/glocalfileoutputstream.c:456 ../gio/glocalfileoutputstream.c:1003
 #, c-format
 msgid "Error seeking in file: %s"
 msgstr ""
@@ -2052,13 +2052,13 @@ msgstr ""
 msgid "Error renaming temporary file: %s"
 msgstr ""
 
-#: ../gio/glocalfileoutputstream.c:502 ../gio/glocalfileoutputstream.c:1053
+#: ../gio/glocalfileoutputstream.c:502 ../gio/glocalfileoutputstream.c:1054
 #, c-format
 msgid "Error truncating file: %s"
 msgstr ""
 
 #: ../gio/glocalfileoutputstream.c:555 ../gio/glocalfileoutputstream.c:785
-#: ../gio/glocalfileoutputstream.c:1034 ../gio/gsubprocess.c:360
+#: ../gio/glocalfileoutputstream.c:1035 ../gio/gsubprocess.c:360
 #, c-format
 msgid "Error opening file '%s': %s"
 msgstr ""
@@ -2075,7 +2075,7 @@ msgstr ""
 msgid "The file was externally modified"
 msgstr ""
 
-#: ../gio/glocalfileoutputstream.c:1018
+#: ../gio/glocalfileoutputstream.c:1019
 #, c-format
 msgid "Error removing old file: %s"
 msgstr ""
@@ -3066,8 +3066,8 @@ msgstr ""
 msgid "Failed to expand exec line '%s' with URI '%s'"
 msgstr ""
 
-#: ../glib/gconvert.c:477 ../glib/gutf8.c:849 ../glib/gutf8.c:1061
-#: ../glib/gutf8.c:1198 ../glib/gutf8.c:1302
+#: ../glib/gconvert.c:477 ../glib/gutf8.c:851 ../glib/gutf8.c:1063
+#: ../glib/gutf8.c:1200 ../glib/gutf8.c:1304
 msgid "Partial character sequence at end of input"
 msgstr ""
 
@@ -3536,7 +3536,7 @@ msgstr ""
 msgid "Value '%s' cannot be interpreted as a float number."
 msgstr ""
 
-#: ../glib/gkeyfile.c:4351
+#: ../glib/gkeyfile.c:4353
 #, c-format
 msgid "Value '%s' cannot be interpreted as a boolean."
 msgstr ""
@@ -4300,20 +4300,20 @@ msgid ""
 "process"
 msgstr ""
 
-#: ../glib/gutf8.c:795
+#: ../glib/gutf8.c:797
 msgid "Failed to allocate memory"
 msgstr ""
 
-#: ../glib/gutf8.c:928
+#: ../glib/gutf8.c:930
 msgid "Character out of range for UTF-8"
 msgstr ""
 
-#: ../glib/gutf8.c:1029 ../glib/gutf8.c:1038 ../glib/gutf8.c:1168
-#: ../glib/gutf8.c:1177 ../glib/gutf8.c:1316 ../glib/gutf8.c:1413
+#: ../glib/gutf8.c:1031 ../glib/gutf8.c:1040 ../glib/gutf8.c:1170
+#: ../glib/gutf8.c:1179 ../glib/gutf8.c:1318 ../glib/gutf8.c:1415
 msgid "Invalid sequence in conversion input"
 msgstr ""
 
-#: ../glib/gutf8.c:1327 ../glib/gutf8.c:1424
+#: ../glib/gutf8.c:1329 ../glib/gutf8.c:1426
 msgid "Character out of range for UTF-16"
 msgstr ""
 

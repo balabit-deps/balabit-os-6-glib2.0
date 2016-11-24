@@ -882,7 +882,6 @@ program_transform_name = @program_transform_name@
 psdir = @psdir@
 pyexecdir = @pyexecdir@
 pythondir = @pythondir@
-runstatedir = @runstatedir@
 sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 srcdir = @srcdir@
@@ -1175,8 +1174,6 @@ libglib_2_0_la_LDFLAGS = $(GLIB_LINK_FLAGS) \
 	-export-dynamic $(no_undefined)
 
 INSTALL_PROGS = $(am__append_23) $(am__append_24) $(am__append_25)
-@ENABLE_DTRACE_TRUE@DTCOMPILE = $(patsubst -W%,,$(LTCOMPILE))
-@ENABLE_DTRACE_TRUE@DTCFLAGS = $(patsubst -W%,,$(CFLAGS))
 tapset_in_files = glib.stp.in
 tapsetdir = @ABS_TAPSET_DIR@
 @ENABLE_SYSTEMTAP_TRUE@tapset_DATA = $(tapset_in_files:.stp.in=.stp)
@@ -3069,7 +3066,7 @@ uninstall-local: uninstall-ms-lib uninstall-gdb
 @ENABLE_DTRACE_TRUE@	@$(SED) -e "s,define STAP_HAS_SEMAPHORES 1,undef STAP_HAS_SEMAPHORES," < $@.tmp > $@ && rm -f $@.tmp
 
 @ENABLE_DTRACE_TRUE@glib_probes.lo: glib_probes.d
-@ENABLE_DTRACE_TRUE@	$(AM_V_GEN) env CC="$(DTCOMPILE)" CFLAGS="$(DTCFLAGS)" $(DTRACE) -G -s $< -o $@
+@ENABLE_DTRACE_TRUE@	$(AM_V_GEN) $(LIBTOOL) --mode=compile $(AM_V_lt) --tag=CC $(DTRACE) -G -s $< -o $@
 
 @ENABLE_SYSTEMTAP_TRUE@$(tapset_DATA): %.stp: %.stp.in Makefile
 @ENABLE_SYSTEMTAP_TRUE@	$(AM_V_GEN)$(SED) \

@@ -167,6 +167,9 @@ g_socket_service_new (<em class="parameter"><code><span class="type">void</span>
 <p>Creates a new <a class="link" href="GSocketService.html" title="GSocketService"><span class="type">GSocketService</span></a> with no sockets to listen for.
 New listeners can be added with e.g. <a class="link" href="GSocketListener.html#g-socket-listener-add-address" title="g_socket_listener_add_address ()"><code class="function">g_socket_listener_add_address()</code></a>
 or <a class="link" href="GSocketListener.html#g-socket-listener-add-inet-port" title="g_socket_listener_add_inet_port ()"><code class="function">g_socket_listener_add_inet_port()</code></a>.</p>
+<p>New services are created active, there is no need to call
+<a class="link" href="GSocketService.html#g-socket-service-start" title="g_socket_service_start ()"><code class="function">g_socket_service_start()</code></a>, unless <a class="link" href="GSocketService.html#g-socket-service-stop" title="g_socket_service_stop ()"><code class="function">g_socket_service_stop()</code></a> has been
+called before.</p>
 <div class="refsect3">
 <a name="g-socket-service-new.returns"></a><h4>Returns</h4>
 <p> a new <a class="link" href="GSocketService.html" title="GSocketService"><span class="type">GSocketService</span></a>.</p>
@@ -178,8 +181,10 @@ or <a class="link" href="GSocketListener.html#g-socket-listener-add-inet-port" t
 <a name="g-socket-service-start"></a><h3>g_socket_service_start ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 g_socket_service_start (<em class="parameter"><code><a class="link" href="GSocketService.html" title="GSocketService"><span class="type">GSocketService</span></a> *service</code></em>);</pre>
-<p>Starts the service, i.e. start accepting connections
-from the added sockets when the mainloop runs.</p>
+<p>Restarts the service, i.e. start accepting connections
+from the added sockets when the mainloop runs. This only needs
+to be called after the service has been stopped from
+<a class="link" href="GSocketService.html#g-socket-service-stop" title="g_socket_service_stop ()"><code class="function">g_socket_service_stop()</code></a>.</p>
 <p>This call is thread-safe, so it may be called from a thread
 handling an incoming client request.</p>
 <div class="refsect3">
@@ -213,6 +218,9 @@ close the listening sockets, and you can call
 <a class="link" href="GSocketService.html#g-socket-service-start" title="g_socket_service_start ()"><code class="function">g_socket_service_start()</code></a> again later to begin listening again. To
 close the listening sockets, call <a class="link" href="GSocketListener.html#g-socket-listener-close" title="g_socket_listener_close ()"><code class="function">g_socket_listener_close()</code></a>. (This
 will happen automatically when the <a class="link" href="GSocketService.html" title="GSocketService"><span class="type">GSocketService</span></a> is finalized.)</p>
+<p>This must be called before calling <a class="link" href="GSocketListener.html#g-socket-listener-close" title="g_socket_listener_close ()"><code class="function">g_socket_listener_close()</code></a> as
+the socket service will start accepting connections immediately
+when a new socket is added.</p>
 <div class="refsect3">
 <a name="g-socket-service-stop.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
