@@ -184,7 +184,7 @@ GSimpleAction implements
 <p>A <a class="link" href="GSimpleAction.html" title="GSimpleAction"><span class="type">GSimpleAction</span></a> is the obvious simple implementation of the <a class="link" href="GAction.html" title="GAction"><span class="type">GAction</span></a>
 interface. This is the easiest way to create an action for purposes of
 adding it to a <a class="link" href="GSimpleActionGroup.html" title="GSimpleActionGroup"><span class="type">GSimpleActionGroup</span></a>.</p>
-<p>See also <span class="type">GtkAction</span>.</p>
+<p>See also <a href="http://developer.gnome.org/gtk3/GtkAction.html#GtkAction-struct"><span class="type">GtkAction</span></a>.</p>
 </div>
 <div class="refsect1">
 <a name="GSimpleAction.functions_details"></a><h2>Functions</h2>
@@ -521,19 +521,19 @@ call <a class="link" href="GSimpleAction.html#g-simple-action-set-state" title="
 11
 12
 13</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="gtkdoc kwb">static void</span>
-<span class="function">change_volume_state</span> <span class="gtkdoc opt">(</span>GSimpleAction <span class="gtkdoc opt">*</span>action<span class="gtkdoc opt">,</span>
-                     GVariant      <span class="gtkdoc opt">*</span>value<span class="gtkdoc opt">,</span>
-                     gpointer       user_data<span class="gtkdoc opt">)</span>
-<span class="gtkdoc opt">{</span>
-  gint requested<span class="gtkdoc opt">;</span>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">static</span><span class="normal"> </span><span class="type">void</span>
+<span class="function">change_volume_state</span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">GSimpleAction</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">action</span><span class="symbol">,</span>
+<span class="normal">                     </span><span class="usertype">GVariant</span><span class="normal">      </span><span class="symbol">*</span><span class="normal">value</span><span class="symbol">,</span>
+<span class="normal">                     </span><span class="usertype">gpointer</span><span class="normal">       user_data</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">  </span><span class="usertype">gint</span><span class="normal"> requested</span><span class="symbol">;</span>
 
-  requested <span class="gtkdoc opt">=</span> <span class="function"><a href="../glib-GVariant.html#g-variant-get-int32">g_variant_get_int32</a></span> <span class="gtkdoc opt">(</span>value<span class="gtkdoc opt">);</span>
+<span class="normal">  requested </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="../glib-GVariant.html#g-variant-get-int32">g_variant_get_int32</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">value</span><span class="symbol">);</span>
 
-  <span class="gtkdoc slc">// Volume only goes from 0 to 10</span>
-  <span class="keyword">if</span> <span class="gtkdoc opt">(</span><span class="number">0</span> <span class="gtkdoc opt">&lt;=</span> requested <span class="gtkdoc opt">&amp;&amp;</span> requested <span class="gtkdoc opt">&lt;=</span> <span class="number">10</span><span class="gtkdoc opt">)</span>
-    <span class="function"><a href="GSimpleAction.html#g-simple-action-set-state">g_simple_action_set_state</a></span> <span class="gtkdoc opt">(</span>action<span class="gtkdoc opt">,</span> value<span class="gtkdoc opt">);</span>
-<span class="gtkdoc opt">}</span></pre></td>
+<span class="normal">  </span><span class="comment">// Volume only goes from 0 to 10</span>
+<span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="number">0</span><span class="normal"> </span><span class="symbol">&lt;=</span><span class="normal"> requested </span><span class="symbol">&amp;&amp;</span><span class="normal"> requested </span><span class="symbol">&lt;=</span><span class="normal"> </span><span class="number">10</span><span class="symbol">)</span>
+<span class="normal">    </span><span class="function"><a href="GSimpleAction.html#g-simple-action-set-state">g_simple_action_set_state</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">action</span><span class="symbol">,</span><span class="normal"> value</span><span class="symbol">);</span>
+<span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>

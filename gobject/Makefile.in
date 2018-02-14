@@ -777,7 +777,6 @@ program_transform_name = @program_transform_name@
 psdir = @psdir@
 pyexecdir = @pyexecdir@
 pythondir = @pythondir@
-runstatedir = @runstatedir@
 sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 srcdir = @srcdir@
@@ -974,8 +973,6 @@ gobject_c_sources = \
 	gvaluetransform.c	\
 	gvaluetypes.c
 
-@ENABLE_DTRACE_TRUE@DTCOMPILE = $(patsubst -W%,,$(LTCOMPILE))
-@ENABLE_DTRACE_TRUE@DTCFLAGS = $(patsubst -W%,,$(CFLAGS))
 tapset_in_files = gobject.stp.in
 @ENABLE_SYSTEMTAP_TRUE@tapsetdir = @ABS_TAPSET_DIR@
 @ENABLE_SYSTEMTAP_TRUE@tapset_DATA = $(tapset_in_files:.stp.in=.stp)
@@ -2210,7 +2207,7 @@ uninstall-ms-lib:
 @ENABLE_DTRACE_TRUE@	@$(SED) -e "s,define STAP_HAS_SEMAPHORES 1,undef STAP_HAS_SEMAPHORES," < $@.tmp > $@ && rm -f $@.tmp
 
 @ENABLE_DTRACE_TRUE@gobject_probes.lo: gobject_probes.d
-@ENABLE_DTRACE_TRUE@	$(AM_V_GEN) env CC="$(DTCOMPILE)" CFLAGS="$(DTCFLAGS)" $(DTRACE) -G -s $< -o $@
+@ENABLE_DTRACE_TRUE@	$(AM_V_GEN) $(LIBTOOL) --mode=compile $(AM_V_lt) --tag=CC $(DTRACE) -G -s $< -o $@
 
 @ENABLE_SYSTEMTAP_TRUE@$(tapset_DATA): %.stp: %.stp.in Makefile
 @ENABLE_SYSTEMTAP_TRUE@	$(AM_V_GEN)$(SED) \

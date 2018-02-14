@@ -176,7 +176,8 @@ well-known name of a D-Bus service, or below. For example, if a D-Bus service
 is available at the well-known name <code class="literal">net.example.ExampleService1</code>, the object
 manager should typically be exported at <code class="literal">/net/example/ExampleService1</code>, or
 below (to allow for multiple object managers in a service).</p>
-<p>It is not supported to export an object manager at the root path, <code class="literal">/</code>.</p>
+<p>It is supported, but not recommended, to export an object manager at the root
+path, <code class="literal">/</code>.</p>
 <p>See <a class="link" href="GDBusObjectManagerClient.html" title="GDBusObjectManagerClient"><span class="type">GDBusObjectManagerClient</span></a> for the client-side code that is
 intended to be used with <a class="link" href="GDBusObjectManagerServer.html" title="GDBusObjectManagerServer"><span class="type">GDBusObjectManagerServer</span></a> or any D-Bus
 object implementing the org.freedesktop.DBus.ObjectManager
@@ -204,8 +205,7 @@ signals being emitted.</p>
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>object_path</p></td>
-<td class="parameter_description"><p>The object path to export the manager object at, which should
-not be <code class="literal">/</code>.</p></td>
+<td class="parameter_description"><p>The object path to export the manager object at.</p></td>
 <td class="parameter_annotations"> </td>
 </tr></tbody>
 </table></div>
