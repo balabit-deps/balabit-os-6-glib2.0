@@ -1,3 +1,24 @@
+glib2.0 (2.48.2-0ubuntu4) xenial; urgency=medium
+
+  * Add a versioned Pre-Depends for dpkg because the libglib2.0-0 -await
+    trigger requires a newer dpkg than the one in Ubuntu 14.04. (LP: #1784065)
+
+ -- Brian Murray <brian@ubuntu.com>  Mon, 30 Jul 2018 08:29:26 -0700
+
+glib2.0 (2.48.2-0ubuntu3) xenial; urgency=medium
+
+  * tests-gdatetime-Use-a-real-rather-than-invented-timezone.patch:
+    Cherry-pick upstream fix to make glib2.0 build again and tests
+    run again with time zone changes.
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Mon, 16 Jul 2018 11:56:58 +0200
+
+glib2.0 (2.48.2-0ubuntu2) xenial; urgency=medium
+
+  * Convert triggers to noawait (LP: #1780996)
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Tue, 10 Jul 2018 18:17:29 +0200
+
 glib2.0 (2.48.2-0ubuntu1bb1) xenial; urgency=medium
 
   * Balabit patched version
