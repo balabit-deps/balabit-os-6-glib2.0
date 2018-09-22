@@ -13,3 +13,5 @@ Do-not-attempt-to-autolaunch-a-session-dbus-daemon-w.patch
 skip-broken-timer-test.patch
 0001-Fix-trashing-on-overlayfs.patch
 tests-gdatetime-Use-a-real-rather-than-invented-timezone.patch
+CVE-2018-16428.patch
+CVE-2018-16429.patch
