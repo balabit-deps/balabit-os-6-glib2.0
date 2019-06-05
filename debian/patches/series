@@ -15,3 +15,4 @@ skip-broken-timer-test.patch
 tests-gdatetime-Use-a-real-rather-than-invented-timezone.patch
 CVE-2018-16428.patch
 CVE-2018-16429.patch
+CVE-2019-12450.patch
