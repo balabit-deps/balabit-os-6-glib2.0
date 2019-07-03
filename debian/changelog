@@ -1,3 +1,14 @@
+glib2.0 (2.48.2-0ubuntu4.3) xenial-security; urgency=medium
+
+  * SECURITY UPDATE: Not properly restrict directory and file permissions
+    - debian/patches/CVE-2019-13012.patch: changes the permissions when
+      a directory is created, using 700 instead 777 in
+      gio/gkeyfilesettingsbackend.c and changes test to run in a temp
+      directory in gio/tests/gsettings.c.
+    - CVE-2019-13012
+
+ -- Leonidas S. Barbosa <leo.barbosa@canonical.com>  Wed, 03 Jul 2019 15:24:33 -0300
+
 glib2.0 (2.48.2-0ubuntu4.2) xenial-security; urgency=medium
 
   * SECURITY UPDATE: Less restrictive permissions during copying
