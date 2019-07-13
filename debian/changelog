@@ -1,3 +1,9 @@
+glib2.0 (2.48.2-0ubuntu4.3bb1) xenial; urgency=medium
+
+  * Balabit patched version
+
+ -- Balabit Platform Team <devnull@dev.null>  Sat, 13 Jul 2019 04:23:23 +0200
+
 glib2.0 (2.48.2-0ubuntu4.3) xenial-security; urgency=medium
 
   * SECURITY UPDATE: Not properly restrict directory and file permissions
