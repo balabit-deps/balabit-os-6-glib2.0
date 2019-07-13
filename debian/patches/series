@@ -16,3 +16,5 @@ tests-gdatetime-Use-a-real-rather-than-invented-timezone.patch
 CVE-2018-16428.patch
 CVE-2018-16429.patch
 CVE-2019-12450.patch
+CVE-2019-13012-1.patch
+CVE-2019-13012-2.patch
