@@ -1,3 +1,13 @@
+glib2.0 (2.48.2-0ubuntu4.4) xenial-security; urgency=medium
+
+  * SECURITY REGRESSION: regression in last security update (LP: #1838890)
+    - debian/patches/CVE-2019-13012-regression.patch: fix a
+      memory leak introduced by the last security update while
+      not properly handled the g_file_get_patch function in
+      gio/gkeyfilesettingsbackend.c.
+
+ -- Leonidas S. Barbosa <leo.barbosa@canonical.com>  Mon, 05 Aug 2019 12:09:36 -0300
+
 glib2.0 (2.48.2-0ubuntu4.3bb1) xenial; urgency=medium
 
   * Balabit patched version
