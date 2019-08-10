@@ -1,3 +1,9 @@
+glib2.0 (2.48.2-0ubuntu4.4bb1) xenial; urgency=medium
+
+  * Balabit patched version
+
+ -- Balabit Platform Team <devnull@dev.null>  Sat, 10 Aug 2019 04:22:56 +0200
+
 glib2.0 (2.48.2-0ubuntu4.4) xenial-security; urgency=medium
 
   * SECURITY REGRESSION: regression in last security update (LP: #1838890)
