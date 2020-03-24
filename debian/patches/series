@@ -19,3 +19,6 @@ CVE-2019-12450.patch
 CVE-2019-13012-1.patch
 CVE-2019-13012-2.patch
 CVE-2019-13012-regression.patch
+gcredentialsprivate-Document-the-various-private-macros.patch
+credentials-Invalid-Linux-struct-ucred-means-no-informati.patch
+GDBus-prefer-getsockopt-style-credentials-passing-APIs.patch
