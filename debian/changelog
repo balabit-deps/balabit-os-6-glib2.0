@@ -1,3 +1,21 @@
+glib2.0 (2.48.2-0ubuntu4.6) xenial-security; urgency=medium
+
+  * No-change rebuild for -security
+
+ -- Alex Murray <alex.murray@canonical.com>  Tue, 24 Mar 2020 11:28:34 +1030
+
+glib2.0 (2.48.2-0ubuntu4.5) xenial; urgency=medium
+
+  * d/p/gcredentialsprivate-Document-the-various-private-macros.patch,
+    d/p/credentials-Invalid-Linux-struct-ucred-means-no-informati.patch,
+    d/p/GDBus-prefer-getsockopt-style-credentials-passing-APIs.patch:
+    - Ensure libdbus clients can authenticate with a GDBusServer like
+      the one in ibus. The patches cherry picked from 2.62.2-2 in focal
+      in order to allow the ibus fix of CVE-2019-14822 to be re-enabled
+      without breaking ibus for Qt applications (LP: #1844853).
+
+ -- Gunnar Hjalmarsson <gunnarhj@ubuntu.com>  Thu, 31 Oct 2019 00:48:00 +0100
+
 glib2.0 (2.48.2-0ubuntu4.4bb1) xenial; urgency=medium
 
   * Balabit patched version
