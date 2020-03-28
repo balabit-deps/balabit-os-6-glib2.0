@@ -1,3 +1,9 @@
+glib2.0 (2.48.2-0ubuntu4.6bb1) xenial; urgency=medium
+
+  * Balabit patched version
+
+ -- Balabit Platform Team <devnull@dev.null>  Sat, 28 Mar 2020 04:21:38 +0100
+
 glib2.0 (2.48.2-0ubuntu4.6) xenial-security; urgency=medium
 
   * No-change rebuild for -security
