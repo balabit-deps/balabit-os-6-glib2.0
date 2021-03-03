@@ -1,3 +1,18 @@
+glib2.0 (2.48.2-0ubuntu4.7) xenial-security; urgency=medium
+
+  * SECURITY UPDATE: g_byte_array_new_take length truncation
+    - debian/patches/CVE-2021-2721x/CVE-2021-27218.patch: do not accept too
+      large byte arrays in glib/garray.c, glib/gbytes.c,
+      glib/tests/bytes.c.
+    - CVE-2021-27218
+  * SECURITY UPDATE: integer overflow in g_bytes_new
+    - debian/patches/CVE-2021-2721x/CVE-2021-27219*.patch: add internal
+      g_memdup2() function and use it instead of g_memdup() in a bunch of
+      places.
+    - CVE-2021-27219
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Wed, 03 Mar 2021 07:23:43 -0500
+
 glib2.0 (2.48.2-0ubuntu4.6) xenial-security; urgency=medium
 
   * No-change rebuild for -security
