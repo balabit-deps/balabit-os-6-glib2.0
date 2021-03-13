@@ -1,3 +1,9 @@
+glib2.0 (2.48.2-0ubuntu4.7bb1) xenial; urgency=medium
+
+  * Balabit patched version
+
+ -- Balabit Platform Team <devnull@dev.null>  Sat, 13 Mar 2021 04:25:14 +0100
+
 glib2.0 (2.48.2-0ubuntu4.7) xenial-security; urgency=medium
 
   * SECURITY UPDATE: g_byte_array_new_take length truncation
